@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMW Official Website</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            background: rgb(21, 21, 21);
+            color: white;
+            text-align: center;
+            scroll-behavior: smooth;
+            width: 100%;
+            height: 100vh;
+        }
+        .auth-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: url('your-image.jpg') no-repeat center center/cover;
+        }
+        .auth-box {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+            text-align: center;
+            width: 300px;
+        }
+        .auth-box input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+        }
+        .auth-box button {
+            background: #ff5b02;
+            color: white;
+            border: none;
+            padding: 10px;
+            width: 100%;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .auth-box button:hover {
+            background: #e04e00;
+        }
+    </style>
+</head>
+<body>
+    <div class="auth-container" id="authContainer">
+        <!-- Login or Signup form will be inserted here -->
+    </div>
+
+    <script>
+        function showAuthForm(type) {
+            document.getElementById("authContainer").innerHTML = `
+                <div class="auth-box">
+                    <h2>${type === 'signup' ? 'Sign Up' : 'Login'} to BMW</h2>
+                    <input type="text" id="username" placeholder="Username">
+                    <input type="password" id="password" placeholder="Password">
+                    <button onclick="${type === 'signup' ? 'signup()' : 'login()'}">${type === 'signup' ? 'Sign Up' : 'Login'}</button><br><br>
+                    <p>${type === 'signup' ? 'Already have an account?' : "Don't have an account?"} 
+                        <a href="#" onclick="showAuthForm('${type === 'signup' ? 'login' : 'signup'}')">${type === 'signup' ? 'Login' : 'Sign Up'}</a>
+                    </p>
+                </div>
+            `;
+        }
+
+        function signup() {
+            let username = document.getElementById("username").value.trim();
+            let password = document.getElementById("password").value.trim();
+
+            if (!username || !password) {
+                alert("Please enter a valid username and password.");
+                return;
+            }
+
+            let users = JSON.parse(localStorage.getItem("users")) || {};
+            if (users[username]) {
+                alert("Username already exists! Try a different one.");
+                return;
+            }
+
+            users[username] = password;
+            localStorage.setItem("users", JSON.stringify(users));
+            alert("Sign-up successful! You can now log in.");
+            showAuthForm('login');
+        }
+
+        function login() {
+            let username = document.getElementById("username").value.trim();
+            let password = document.getElementById("password").value.trim();
+            let users = JSON.parse(localStorage.getItem("users")) || {};
+
+            if (users[username] && users[username] === password) {
+                localStorage.setItem("loggedIn", "true");
+                localStorage.setItem("currentUser", username);
+                alert("Login successful! Redirecting...");
+                window.location.href = "index.html";
+            } else {
+                alert("Invalid username or password.");
+            }
+        }
+
+        function logout() {
+            localStorage.removeItem("loggedIn");
+            localStorage.removeItem("currentUser");
+            showAuthForm('login');
+        }
+
+        // Always show login/signup first, no direct redirect
+        showAuthForm('login');
+    </script>
+</body>
+</html>

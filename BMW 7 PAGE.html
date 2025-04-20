@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMW M4 Competition</title>
+    <style>
+        /* Google Fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        /* Fullscreen Hero Section */
+        .hero {
+            height: 100vh;
+            background: url('your-car-image.jpg') no-repeat center center/cover;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        /* Car Name (Animated Slide-In) */
+        .car-name {
+            position: absolute;
+            top: 40px;
+            left: 50px;
+            font-size: 50px;
+            font-weight: 900;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-family: 'Oswald', sans-serif;
+            color: white;
+            text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.7);
+            opacity: 0;
+            transform: translateX(-100px);
+            animation: slideIn 1s ease-out forwards;
+        }
+
+        @keyframes slideIn {
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Information Section */
+        .info-section {
+            padding: 100px 15%;
+            background: #0d0d0d;
+            color: white;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+
+        .info-section.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .info-section h2 {
+            font-size: 40px;
+            margin-bottom: 15px;
+            border-bottom: 3px solid #00aaff;
+            padding-bottom: 10px;
+            display: inline-block;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .info-section p {
+            font-size: 20px;
+            line-height: 1.8;
+            color: #bbb;
+            margin-bottom: 50px;
+        }
+
+        /* Specifications Section */
+        .specs {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .spec-box {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            transition: 0.4s ease-in-out;
+            box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.1);
+            transform: translateY(30px);
+            opacity: 0;
+        }
+
+        .info-section.active .spec-box {
+            opacity: 1;
+            transform: translateY(0);
+            transition: 0.8s ease-in-out;
+        }
+
+        .spec-box:hover {
+            background: rgba(0, 170, 255, 0.3);
+            transform: translateY(-5px);
+            box-shadow: 0px 10px 20px rgba(0, 170, 255, 0.4);
+        }
+
+        .spec-box h3 {
+            font-size: 24px;
+            color: #00aaff;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+
+        .spec-box p {
+            font-size: 18px;
+            color: white;
+            font-weight: bold;
+        }
+
+        /* Footer Section */
+        .footer {
+            text-align: center;
+            background: #000;
+            padding: 30px 10%;
+            color: white;
+            font-size: 18px;
+            transition: 0.3s ease-in-out;
+        }
+
+        .footer:hover {
+            background: #00aaff;
+            color: black;
+        }
+
+        /* Scroll Animation */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+        }
+
+        .fade-in.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .car-name {
+                font-size: 36px;
+                top: 20px;
+                left: 20px;
+            }
+            .info-section {
+                padding: 50px 10%;
+            }
+            .info-section h2 {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Fullscreen Image -->
+    <div class="hero">
+        <div class="car-name">BMW 7 Competition</div>
+    </div>
+
+    <!-- Car Information Section -->
+    <div class="info-section fade-in">
+        <h2>Unmatched Performance</h2>
+        <p>The BMW M4 Competition is engineered for precision and power. A high-revving twin-turbocharged inline-six engine propels you from 0-100 km/h in just 3.8 seconds. Built for enthusiasts, it offers an M xDrive AWD system, Adaptive M Suspension, and an M Sport Differential for unparalleled control.</p>
+    </div>
+
+    <!-- Advanced Features -->
+    <div class="info-section fade-in">
+        <h2>State-of-the-Art Technology</h2>
+        <p>The M4 Competition integrates cutting-edge technology, from its 12.3-inch digital cockpit to the 10.25-inch infotainment system with iDrive 8.0. Advanced safety features, including lane assist and adaptive cruise control, ensure a seamless driving experience.</p>
+    </div>
+
+    <!-- Specifications Section -->
+    <div class="info-section fade-in">
+        <h2>Key Specifications</h2>
+        <div class="specs">
+            <div class="spec-box">
+                <h3>Engine</h3>
+                <p>3.0L Twin-Turbo Inline-6</p>
+            </div>
+            <div class="spec-box">
+                <h3>Power</h3>
+                <p>503 HP @ 6250 RPM</p>
+            </div>
+            <div class="spec-box">
+                <h3>Torque</h3>
+                <p>479 lb-ft @ 2750 RPM</p>
+            </div>
+            <div class="spec-box">
+                <h3>Transmission</h3>
+                <p>8-Speed M Steptronic</p>
+            </div>
+            <div class="spec-box">
+                <h3>Top Speed</h3>
+                <p>290 km/h (180 mph)</p>
+            </div>
+            <div class="spec-box">
+                <h3>0-100 km/h</h3>
+                <p>3.8 seconds</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        © 2025 BMW Performance. All Rights Reserved.
+    </div>
+
+    <!-- Scroll Effect Script -->
+    <script>
+        document.addEventListener("scroll", function() {
+            let elements = document.querySelectorAll(".fade-in");
+            elements.forEach((el) => {
+                let position = el.getBoundingClientRect().top;
+                let screenHeight = window.innerHeight;
+                if (position < screenHeight - 100) {
+                    el.classList.add("active");
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

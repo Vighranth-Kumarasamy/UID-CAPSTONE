@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMW Official Website</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            background: url("bg2.JPEG") no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            scroll-behavior: smooth;
+            width: 1895px;
+            height: 1000px;
+
+        }
+        header {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+        }
+        .nav-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        .nav-buttons button {
+            background: #0071c1;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+        .nav-buttons button:hover {
+            background: #005a9e;
+        }
+        .hero {
+            height: 100vh;
+            display: flex;
+           
+            flex-direction: column;
+            background: rgba(0, 0, 0, 0);
+        }
+        .hero h1 {
+            font-size: 50px;
+            margin-bottom: 20px;
+        }
+        .hero p {
+            font-size: 20px;
+        }
+        .cars {
+            padding: 50px;
+	    width: 1895px;
+            background: black;
+        }
+        .cars h2 {
+            margin-bottom: 20px;
+        }
+        .car-models {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .car {
+            background: white;
+            color: black;
+            padding: 10px;
+            border-radius: 15px;
+            width: 250px;
+            height:350px;
+            transition: transform 0.3s;
+        }
+        .car h3{
+            margin-top:15px;
+        }
+        .car img {
+            width: 100%;
+            border-radius: 15px;
+        }
+        .car:hover{
+            transform: scale(1.1);
+        }
+        .contact {
+            padding: 50px;
+            background: #333;
+        }
+        .contact p {
+            font-size: 18px;
+        }
+        footer {
+            background: black;
+            padding: 10px;
+            text-align: center;
+        }
+        
+        
+    </style>
+</head>
+<body>
+    <header>
+        <div class="nav-buttons">
+            <button onclick="scrollToSection('home')">Home</button>
+            <button onclick="scrollToSection('models')">Models</button>
+            <button onclick="scrollToSection('contact')">Contact</button>
+        </div>
+    </header>
+
+    <section class="hero" id="home">
+        <h1>WELCOME TO BMW</h1>
+        <p></p>
+    </section>
+
+    <section class="cars" id="models">
+        <h2>Car Models</h2>
+        <div class="car-models">
+            <div class="car">
+                <a href="https://www.bmw.in/en/all-models/m-series/bmw-4-series-m-models/bmw-m4-coupe.html"><img src="C:\Users\vighr\Downloads\bmw1.jpg" alt="BMW M4"></a>
+                <h3>BMW M4 CS</h3>
+            </div>
+            <div class="car">
+                <a href="https://www.bmw.in/en/all-models/x-series/X5/2023/bmw-x5-overview.html"><img src="C:\Users\vighr\Downloads\bmw3.jpg" alt="BMW X5"></a>
+                <h3>BMW X5</h3>
+            </div>
+            <div class="car">
+                 <a href="https://www.bmw.in/en/all-models/m-series/m8-coupe/2022/bmw-m8-competition-coupe-overview.html"><img src="C:\Users\vighr\Downloads\bmw7.jpg" alt="BMW i8"></a>
+                 <h3>BMW M8 competition</h3>
+            </div>
+            <div class="car">
+                <a href="https://www.bmw.in/en/all-models/7-series/sedan/2022/bmw-7-series-sedan-highlights.html"><img src="C:\Users\vighr\Downloads\bmw73.jpg" alt="BMW X5"></a>
+                <h3>BMW 7</h3>
+            </div>
+            <div class="car">
+                <a href="https://www.bmw.in/en/all-models/z-series/roadster/2022/bmw-z4-overview.html"><img src="E:\Amrita\UI Designing\BMW-Z4.jpg" alt="BMW i8"></a>
+                <h3>BMW Z4</h3>
+            </div>
+        </div>
+        <br><br>
+        <h2>Bike Models</h2>
+        <div class="car-models">
+            <div class="car">
+                <a href="https://www.bmw-motorrad.in/en/models/sport/s1000rr-new.html"><img src="C:\Users\vighr\Downloads\bmw4.jpg" alt="BMW i8"></a>
+                <h3>BMW S1000RR</h3>
+            </div>
+            <div class="car">
+                <a href="https://www.bmw-motorrad.in/en/models/m/m1000rr.html"><img src="E:\Amrita\UI Designing\m1000rr.jpg" alt="BMW i8"></a>
+                <h3>BMW M1000RR</h3>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="contact" id="contact">
+        <h2>Contact Us</h2>
+        <p>Email: vikky@bmw.com | Phone: +91 94xxxxxxx6</p>
+        <p>Quick Links
+Home
+BMW in your country
+BMW Group Careers
+EU Detergents Regulation
+REACH Regulation
+Compatibility Check
+Accessories Update
+Connected Test Vehicle
+Service Page Charging Products
+Cooperation Test Car
+EU Battery Regulation<br>
+
+More BMW Websites
+BMW M
+BMW M Motorsport
+BMW Golfsport
+BMW M Driving Experience
+BMW Welt
+BMW Group Classic
+BMW Corporate/Direct Sales
+BMW Group
+BMW Group Culture
+BMW ConnectedDrive Upgrades<br>
+
+BMW.com
+About BMW.com
+Contact
+Cookies
+Imprint
+Legal Notice / Data protection<br>
+
+Visit us on
+Facebook
+X
+Instagram
+YouTube</p>
+<p>Contact
+
+Find a Dealer
+Request a Test Drive
+Careers
+Contact Us
+Quick Links<br>
+
+Build your BMW
+BMW Financial Services
+BMW Safety
+BMW Premium Selection (Used Cars)
+Experience BMW<br>
+
+BMW Group
+BMW Excellence Club
+BMW Motorrad
+Charging Network
+Legal<br>
+
+Legal Disclaimer/Imprint
+Privacy Policy
+    </section>
+
+    <footer>
+        <p>&copy; 2025 BMW. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
